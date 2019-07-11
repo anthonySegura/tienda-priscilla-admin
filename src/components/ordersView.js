@@ -27,7 +27,13 @@ class OrdersView extends Component {
             <td>{p.address}</td>
             <td>{p.email}</td>
             <td>
-              <input type="checkbox" />
+              <input type="checkbox" checked={p.state === 'pendiente'}/>
+            </td>
+            <td>
+              <input type="checkbox" checked={p.state === 'despachado'}/>
+            </td>
+            <td>
+              <input type="checkbox" checked={p.state === 'entregado'}/>
             </td>
           </tr>
         )
@@ -46,8 +52,9 @@ class OrdersView extends Component {
                 <th>ID</th>
                 <th>Dirección</th>
                 <th>Email</th>
+                <th>Pendiente</th>
+                <th>Despachado</th>
                 <th>Entregado</th>
-                <th></th>
               </tr>
             </thead>
             <tbody>

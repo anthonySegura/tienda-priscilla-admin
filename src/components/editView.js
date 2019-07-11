@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header';
-import { getProduct } from '../api_requests/requests';
+import { getProduct, editProduct } from '../api_requests/requests';
 
 class EditView extends Component {
   constructor(props) {
@@ -18,6 +18,8 @@ class EditView extends Component {
     this.changeImg = this.changeImg.bind(this);
     this.changeStock = this.changeStock.bind(this);
     this.changeTax = this.changeTax.bind(this);
+    this.edit = this.edit.bind(this);
+
   }
 
   async componentDidMount() {
@@ -63,6 +65,18 @@ class EditView extends Component {
     })
   } 
 
+  async edit() {
+    editProduct({
+      name: this.state.name,
+      price: this.state.price,
+      img: this.state.img,
+      stock: this.state.stock,
+      tax: this.state.tax
+    });
+
+    alert('Producto actualizado');
+  }
+
   render() {
     return (
       <div>
@@ -94,7 +108,7 @@ class EditView extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <button>Actualizar</button>
+                      <button onClick={this.edit}>Actualizar</button>
                     </td>
                   </tr>
                 </tbody>

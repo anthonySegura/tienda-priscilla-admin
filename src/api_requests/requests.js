@@ -233,7 +233,7 @@ async function getOrders() {
       {
         id: 1,
         address: 'por ahí',
-        email: 'correo@gmail.com',
+        email: 'correo@gmail.come',
         state: {
           despachado: false,
           entregado: false
